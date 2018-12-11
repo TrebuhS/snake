@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Canvas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .main {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        canvas {
+            /* height: 300px;
+            width: 600px; */
+            background-color: gray;
+        }
+
+        body {
+            background-color: black;
+        }
+        h1 {
+            color: pink;
+        }
+        .game-over {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Points: <span id="points">0</span></h1>
+        <canvas id="canvasDraw" width="600px" height="600px"></canvas>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
