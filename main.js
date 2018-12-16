@@ -31,7 +31,11 @@ const gameOver = function() {
     h1.textContent = "GAME OVER";
     h1.style.color = "red";
     button.textContent = "Play Again!";
+    button.addEventListener("click", function() {
+        location.reload();
+    });
     div.appendChild(h1);
+    div.appendChild(button);
     main.appendChild(div);
 }
 
@@ -40,11 +44,9 @@ class Apple {
         this.size = size;
         this.newApple();
     }
-
+    
     newApple() {
-        let isOnSnake = true;
-        this.x = Math.floor(Math.random() * (canvasElem.width/this.size));
-        this.y = Math.floor(Math.random() * (canvasElem.height/this.size));
+        let isOnSnake = false;
         do {
             this.x = Math.floor(Math.random() * (canvasElem.width/this.size));
             this.y = Math.floor(Math.random() * (canvasElem.height/this.size));
@@ -138,7 +140,7 @@ class Snake {
     let apple = new Apple(size);
 
     window.addEventListener("keydown", function(e) {
-        if (e.keyCode == 38) {
+        if (e.key == "ArrowUp") {
             direction = "up";
         } else if (e.key == "ArrowLeft") {
             direction = "left";
@@ -164,15 +166,3 @@ class Snake {
 // }
 
 // play();
-
-// const canvasElem = document.querySelector("#canvasDraw");
-// const ctx = canvasElem.getContext("2d");
-// let x = 300;
-// let y = 300;
-// ctx.fillRect(x, y, 20, 20);
-
-// setInterval(function() {
-//     ctx.clearRect(x,y, 20, 20);
-//     x+=20;
-//     ctx.fillRect(x, y, 20, 20);
-// }, 1000/60);
